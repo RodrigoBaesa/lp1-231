@@ -1,5 +1,7 @@
 package semana03;
 
+import java.util.Scanner;
+
 public class Introducao {
     
     public static void main(String[] args){
@@ -20,9 +22,7 @@ public class Introducao {
          int n4 = 324553583; //8 bytes (8 bytes)
 
          // Ponto flutuante
-         float nota1 = 10.34343f; // 4 bytes
-         double nota2 = 10.3434343; // 8 bytes
-
+         float nota1 = 10.34343f;
          // char
          char letra = 'A';
 
@@ -35,5 +35,35 @@ public class Introducao {
          System.out.println(nome);
          System.out.println(nome.toLowerCase());
          System.out.println(nome.toUpperCase());
+
+         // variáveis e constantes
+         int idade = 20;
+         int idade2;
+         idade2 = 30;
+
+         // Java 10 - inferência de tipo com var
+         var idade3 = 15;
+         var nome2 = "Maria";
+
+         // Constante - keyword final
+         final double TESTE = 20.2;
+         final double PI = 3.14;
+
+         // Entrada e saída de dados
+
+         // Entrada - Classe Scanner
+         // Saida - System.out
+
+         Scanner sc = new Scanner(System.in);
+
+         System.out.println("Entre com  o seu nome");
+         String nomeInformado = sc.nextLine();
+
+         System.out.println("Entre com a sua idade");
+         int idadeInformada = sc.nextInt();
+
+         System.out.println(nomeInformado + " " + idadeInformada);
+
+         sc.close();
     }
 }
