@@ -15,3 +15,6 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
     - Introdução a linguagem Java
 - Semana 04
     - Estruturas de controle
+    - Resolução de 4 exercícios
+- Semana 05
+    - Resolução de 2 exercícios
