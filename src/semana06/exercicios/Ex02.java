@@ -46,6 +46,7 @@ public class Ex02 {
         }
     }
 
+
     public static double calcularIMC(double altura, double peso){
         return peso / (altura * altura);
     }
