@@ -16,6 +16,7 @@ public class CalculadoraTest {
 
         // Act
         double soma = Calculadora.somar(numero1, numero2);
+        System.out.println(soma); // so pra n bugar e ficar apitando erro
     }
     @Test
     public void somaUmNumeroPositivoEUmNegativo() {

@@ -63,9 +63,9 @@ public class EstruturaControle {
         //            0      1      2
 
         // 3 notas
-        double n1 = 10.0;
-        double n2 = 5.5;
-        double n3 = 7.4;
+        // double n1 = 10.0;
+        // double n2 = 5.5;
+        // double n3 = 7.4;
 
         double[] notas = new double [3];
         notas[0] = 10.0;

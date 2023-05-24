@@ -21,7 +21,7 @@ public class Ex04_Int {
         if (iid.startsWith("BR") && iid.endsWith("X") && iid.length() == 7 && !iid.equals("BR0000X")){
             String digitoMeio = iid.substring(2,6);;
             try {
-                int numeroId = Integer.parseInt(digitoMeio);
+                Integer.parseInt(digitoMeio);
                 System.out.println("Seu código é valido!");
             }
             catch (Exception e){
