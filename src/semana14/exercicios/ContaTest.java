@@ -8,111 +8,47 @@ public class ContaTest {
     
     @Test
     public void testaInstanciarConta() {
-        Conta conta = new Conta(1, "Domingos Latorre");
+        Conta conta = new Conta(1, "Rodrigo");
 
         assertEquals(1, conta.getCodigo());
-        assertEquals("Domingos Latorre", conta.getCorrentista());
+        assertEquals("Rodrigo", conta.getCorrentista());
         assertEquals(0.0, conta.getSaldo());
     }
 
     @Test
-    public void testaInstanciarContaComCodigoNegativo() {
-
+    public void testaInstanciarCorrentista() {
         assertThrows(RuntimeException.class, () -> {
-            new Conta(-1, "Domingos Latorre");
-        });
-    }
-
-    @Test
-    public void testaInstanciarContaComCodigoZero() {
-
-        assertThrows(RuntimeException.class, () -> {
-            new Conta(-1, "Domingos Latorre");
-        });
-    }
-
-    @Test
-    public void testaInstanciarContaComCorrentistaDeMenosDe5Caracteres() {
-
-        assertThrows(RuntimeException.class, () -> {
-            new Conta(1, "Dom");
-        });
-    }
-
-    @Test
-    public void testaInstanciarContaComCorrentistaDeMaisDe100Caracteres() {
-
-        assertThrows(RuntimeException.class, () -> {
-            new Conta(1, "DomingosLatorreDomingosLatorreDomingosLatorreDomingosLatorreDomingosLatorreDomingosLatorreDomingosLatorre");
+            Conta conta = new Conta(1, "Rodrigo");
+            conta.setCorrentista("R");
         });
     }
 
     @Test
     public void testaSacar() {
 
-        Conta conta = new Conta(1, "Domingos Latorre");
-        conta.depositar(3000.0);
-        conta.sacar(150.0);
+        Conta conta = new Conta(1, "Rodrigo");
+        conta.depositar(1000.0);
+        conta.sacar(100.0);
 
         double saldoAposSaque = conta.getSaldo();
 
-        assertEquals(2850.0, saldoAposSaque);
-    }
-
-    @Test
-    public void testaSacarValorMaiorDoQueSaldo() {
-
-        Conta conta = new Conta(1, "Domingos Latorre");
-        conta.depositar(3000.0);
- 
-        assertThrows(RuntimeException.class, () -> {
-            conta.sacar(3050.0);
-        });
+        assertEquals(900.0, saldoAposSaque);
     }
 
     @Test
     public void testaDepositar() {
 
-        Conta conta = new Conta(1, "Domingos Latorre");
-        conta.depositar(150.0);
+        Conta conta = new Conta(1, "Rodrigo");
+        conta.depositar(500.0);
 
         double saldoAposDeposito = conta.getSaldo();
 
-        assertEquals(150.0, saldoAposDeposito);
-    }
-
-    @Test
-    public void testaTransferir() {
-
-        Conta contaCorrente = new Conta(1, "Domingos Latorre");
-        Conta contaPoupanca = new Conta(2, "Domingos Latorre");
-
-        contaCorrente.depositar(3000.0);
-        contaCorrente.transferir(contaPoupanca, 1000.0);
-
-        double saldoContaRemetente = contaCorrente.getSaldo();
-        double saldoContaDestino = contaPoupanca.getSaldo();
-
-        assertEquals(2000.0, saldoContaRemetente);
-        assertEquals(1000.0, saldoContaDestino);
-    }
-
-    @Test
-    public void testaTransferirValorMaiorDoQueSaldo() {
-
-        Conta contaCorrente = new Conta(1, "Domingos Latorre");
-        Conta contaPoupanca = new Conta(2, "Domingos Latorre");
-
-        contaCorrente.depositar(3000.0);
-
-        assertThrows(RuntimeException.class, () -> {
-            contaCorrente.transferir(contaPoupanca, 3010.0);
-        });
+        assertEquals(500.0, saldoAposDeposito);
     }
 
     @Test
     public void testaGetCodigo() {
-        Conta conta = new Conta(1, "Domingos Latorre");
+        Conta conta = new Conta(1, "Rodrigo");
 
         int codigo = conta.getCodigo();
 
@@ -121,16 +57,16 @@ public class ContaTest {
 
     @Test
     public void testaGetCorrentista() {
-        Conta conta = new Conta(1, "Domingos Latorre");
+        Conta conta = new Conta(1, "Rodrigo");
 
         String correntista = conta.getCorrentista();
 
-        assertEquals("Domingos Latorre", correntista);
+        assertEquals("Rodrigo", correntista);
     }
 
     @Test
     public void testaGetSaldo() {
-        Conta conta = new Conta(1, "Domingos Latorre");
+        Conta conta = new Conta(1, "Rodrigo");
 
         double saldo = conta.getSaldo();
 

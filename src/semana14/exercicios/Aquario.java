@@ -21,10 +21,10 @@ public class Aquario {
     }
 
     public double calcularPotenciaDoTermostato(double temperaturaDesejada, double temperaturaAmbiente) {
-        return calcularVolume() * 0.05 * Math.abs(temperaturaDesejada - temperaturaAmbiente);
+        return calcularVolume() * 0.05 * (temperaturaDesejada - temperaturaAmbiente);
     }
 
-    public double [] calcularQuantidadeLitrosFiltro() {
+    public double [] calcularLitrosFiltro() {
         double [] filtragem = {calcularVolume() * 2, calcularVolume() * 3};
         return filtragem;
     }
@@ -42,20 +42,23 @@ public class Aquario {
     }
 
     public void setComprimento(double comprimento) {
-        if(comprimento <= 0.0)
-            throw new RuntimeException("Comprimento inválido");
+        if(comprimento <= 0.0){
+            throw new RuntimeException("Comprimento inválido!");
+        }
         this.comprimento = comprimento;
     }
 
     public void setAltura(double altura) {
-        if(altura <= 0.0)
-            throw new RuntimeException("Altura inválida");
+        if(altura <= 0.0){
+            throw new RuntimeException("Altura inválida!");
+        }
         this.altura = altura;
     }
 
     public void setLargura(double largura) {
-        if(largura <= 0.0)
-            throw new RuntimeException("Largura inválida");
+        if(largura <= 0.0){
+            throw new RuntimeException("Largura inválida!");
+        }
         this.largura = largura;
     }
 }

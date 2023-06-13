@@ -39,20 +39,23 @@ public class Conta {
     }
 
     private void setCodigo(int codigo) {
-        if(codigo <= 0) 
-            throw new RuntimeException("Código não permitido");
+        if(codigo <= 0) {
+            throw new RuntimeException("Código Inválido");
+        }
         this.codigo = codigo;
     }
 
-    private void setCorrentista(String correntista) {
-        if(correntista.length() < 5 || correntista.length() > 100) 
-            throw new RuntimeException("O nome do titular deve ter no mínimo 5 e no máximo 100 caracteres");
+    void setCorrentista(String correntista) {
+        if(correntista.length() < 5 || correntista.length() > 100) {
+            throw new RuntimeException("Correntista Inválido!");
+        }
         this.correntista = correntista;
     }
 
     private void setSaldo(double saldo) {
-        if(saldo < 0.0) 
-            throw new RuntimeException("Você não pode sacar ou transferir um valor maior que o seu saldo");
+        if(saldo < 0.0) {
+            throw new RuntimeException("Saldo Inválido!");
+        }
         this.saldo = saldo;
     }
 }
