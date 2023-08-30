@@ -1,8 +1,12 @@
 package semana20.exercicios;
 
-public class VerdadeiroFalso extends Questoes{
+public class VerdadeiroFalso extends Questao{
+    public VerdadeiroFalso(int numero, String enunciado){
+        super(numero, enunciado);
+    }
 
-    public VerdadeiroFalso(int numero, String enunciado, boolean alternativa1, boolean alternativa2, boolean alternativa3) {
-        super(numero, enunciado, alternativa1, alternativa2, alternativa3);
+    @Override
+    public void addAlternativa(Alternativa alternativa){
+        alternativas.add(alternativa);
     }
 }
